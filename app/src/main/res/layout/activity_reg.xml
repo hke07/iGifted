@@ -64,7 +64,7 @@
             android:background="@drawable/rounded_corner"/>
 
         <EditText
-            android:id="@+id/email_edit_text"
+            android:id="@+id/email_reg"
             android:inputType="textEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
             android:background="@drawable/rounded_corner"/>
 
         <EditText
-            android:id="@+id/password_edit_text"
+            android:id="@+id/password_reg"
             android:inputType="textPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
             android:background="@drawable/rounded_corner"/>
 
         <EditText
-            android:id="@+id/confirm_password_edit_text"
+            android:id="@+id/confirm_password"
             android:inputType="textPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/create_account_btn"
+            android:id="@+id/register_btn"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:text="Register"
@@ -120,7 +120,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/lgb"
+        android:id="@+id/login_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/form_layout"
@@ -136,30 +136,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:id="@+id/login_text_view_btn"
+            android:id="@+id/login_tvb"
             android:text="Login"/>
-
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/lgb2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lgb"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_margin="8dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Want to observe? Login as a "/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:id="@+id/guest_reg"
-            android:text="Guest"/>
 
     </LinearLayout>
 </RelativeLayout>
