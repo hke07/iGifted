@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "750303278796",
+    "project_id": "igifted-caf4a",
+    "storage_bucket": "igifted-caf4a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:750303278796:android:702c0cb7da2b5fc713f469",
+        "android_client_info": {
+          "package_name": "com.example.igifted"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_HE-5EtZX7ufoZv068qrncl9fSrVqs2Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
