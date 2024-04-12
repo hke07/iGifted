@@ -11,6 +11,7 @@
     <color name="launch">#9CDAA3F6</color>
     <color name="cyan">#0A7FB5</color>
     <color name="launch_text">#17A4E6</color>
-    <color name="red">#E61717</color>
+    <color name="red">#c70000</color>
+    <color name="green">#00ff00</color>
 
 </resources>
