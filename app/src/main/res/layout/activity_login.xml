@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/hello_text"
-        android:layout_marginVertical="32dp"
+        android:layout_marginVertical="20dp"
         android:orientation="vertical">
 
         <EditText
@@ -77,12 +77,23 @@
             android:layout_marginTop="12dp"
             android:background="@drawable/rounded_corner"/>
 
+        <TextView
+            android:id="@+id/error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="6dp"
+            android:textSize="15dp"
+            android:gravity="center"
+            android:textColor="@color/red" />
+
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/login_btn"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:text="Login"
+            android:onClick="signIn"
             android:layout_marginTop="12dp"
             android:paddingVertical="12dp"
             android:textSize="20sp"
@@ -115,6 +126,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
+            android:onClick="toReg"
             android:id="@+id/register_tvb"
             android:text="Register"/>
 

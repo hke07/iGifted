@@ -4,25 +4,30 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
-import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private FirebaseAuth mAuth;
+    private static final String TAG = "LoginActivity";
     EditText loginEmail, loginPassword;
     Button loginBtn;
-    TextView registerTVB;
+    TextView registerTVB, error_text;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,62 +38,58 @@ public class LoginActivity extends AppCompatActivity {
         loginPassword = findViewById(R.id.password_login);
         registerTVB = findViewById(R.id.register_tvb);
         loginBtn = findViewById(R.id.login_btn);
-    }
 
-    public Boolean validateEmail(){
-        String val = loginEmail.getText().toString();
-        if(val.isEmpty()){
-            loginEmail.setError("Email Can't be empty");
-            return false;
-        }else{
-            loginEmail.setError(null);
-            return true;
+        error_text = findViewById(R.id.error);
+
+
+        mAuth = FirebaseAuth.getInstance();
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+
+        boolean isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
+
+        if (isLoggedIn) {
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
         }
     }
 
-    public Boolean validatePassword(){
-        String val = loginPassword.getText().toString();
-        if(val.isEmpty()){
-            loginPassword.setError("Password Can't be empty");
-            return false;
-        }else{
-            loginPassword.setError(null);
-            return true;
-        }
+    public void toReg(View view) {
+        Intent intent = new Intent(LoginActivity.this, RegActivity.class);
+        startActivity(intent);
     }
+    public void signIn(View v) {
+        final String email = loginEmail.getText().toString();
+        final String password = loginPassword.getText().toString();
 
-    public void checkUser(){
-        String userEmail = loginEmail.getText().toString().trim();
-        String userPassword = loginPassword.getText().toString().trim();
+        if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
+            error_text.setText("All fields are required");
+            return;
+        }
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
-        Query checkUserDatabase = reference.orderByChild("email").equalTo(userEmail);
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            FirebaseUser user = mAuth.getCurrentUser();
 
-        checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()){
-                    loginEmail.setError(null);
-                    String passwordFromDB = snapshot.child(userEmail).child("password").getValue(String.class);
+                            if (user != null && user.isEmailVerified()) {
+                                SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putBoolean("isLoggedIn", true);
+                                editor.apply();
 
-                    if(!Objects.equals(passwordFromDB,userPassword)){
-                        loginEmail.setError(null);
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(intent);
-                    }else{
-                        loginPassword.setError("Invalid Password");
-                        loginPassword.requestFocus();
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                startActivity(intent);
+                            } else {
+                                mAuth.signOut();
+                                error_text.setText("Email is not verified. Please verify your email.");
+                            }
+                        } else {
+                            Log.w(TAG, "signInWithEmail:failure", task.getException());
+                            error_text.setText("Authentication failed: " + task.getException().getMessage());
+                        }
                     }
-                }else{
-                    loginEmail.setError("User does not exist");
-                    loginEmail.requestFocus();
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+                });
     }
 }
