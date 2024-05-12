@@ -30,22 +30,57 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/recImage"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:text="Title"
-            android:textColor="@color/launch"
+            android:layout_marginStart="40dp"
+            android:text="Title:"
+            android:textColor="@color/purple_200"
             android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/white1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/recTitle"
+            android:text="-------------"
+            android:layout_marginLeft="24dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/recPriceName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/white1"
+            android:layout_alignStart="@id/recTitle"
+            android:text="Price:"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/teal_700"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/recPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/recTitle"
-            android:layout_alignStart="@id/recTitle"
-            android:layout_marginTop="5dp"
-            android:text="Price"
+            android:layout_below="@id/white1"
+            android:layout_marginLeft="90dp"
+            android:text="Price:"
+            android:textStyle="bold"
             android:textAlignment="center"
-            android:textColor="@color/launch"
+            android:textColor="@color/teal_700"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/white2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/recPrice"
+            android:text="-------------"
+            android:layout_marginLeft="24dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textColor="@color/white"
             android:textSize="18sp" />
 
     </RelativeLayout>

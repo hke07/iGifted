@@ -8,10 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="slay">#0F91A1</color>
-    <color name="launch">#9CDAA3F6</color>
+    <color name="launch">#9CE6C1F8</color>
     <color name="cyan">#0A7FB5</color>
     <color name="launch_text">#17A4E6</color>
     <color name="red">#c70000</color>
     <color name="green">#00ff00</color>
+    <color name="bluish">#1291F6</color>
 
 </resources>

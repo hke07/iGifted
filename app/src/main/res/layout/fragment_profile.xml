@@ -12,17 +12,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:text="Profile"
+        android:textStyle="bold"
         android:textColor="@color/black"
         android:textSize="35sp" />
+
+    <ImageView
+        android:id="@+id/settings"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="320dp"
+        android:layout_marginTop="45dp"
+        android:onClick="toSettings"
+        android:src="@drawable/baseline_settings_24" />
 
     <ImageView
         android:id="@+id/profile_image"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="180dp"
         android:clickable="true"
         android:background="@drawable/rounded_corner"
         android:src="@drawable/profile" />
@@ -34,9 +44,9 @@
         android:layout_below="@+id/profile_image"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="180dp"
-        android:layout_marginTop="18dp"
-        android:textColor="@color/black"
-        android:textSize="25sp" />
+        android:layout_marginTop="20dp"
+        android:textColor="@color/red"
+        android:textSize="35sp" />
 
     <TextView
         android:id="@+id/email"
@@ -45,32 +55,8 @@
         android:layout_below="@+id/name"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="180dp"
-        android:layout_marginTop="5dp"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-
-    <Button
-        android:id="@+id/logOut"
-        android:layout_width="250dp"
-        android:layout_height="65dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="325dp"
-        android:backgroundTint="@color/purple_500"
-        android:onClick="log_out"
-        android:text="Log out"
-        android:textSize="22sp"
-        android:background="@drawable/rounded_corner" />
-
-    <Button
-        android:id="@+id/delete"
-        android:layout_width="250dp"
-        android:layout_height="65dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="400dp"
-        android:backgroundTint="@color/purple_500"
-        android:onClick="deleteAccount"
-        android:text="Delete account"
-        android:textSize="22sp"
-        android:background="@drawable/rounded_corner" />
+        android:layout_marginTop="10dp"
+        android:textColor="@color/red"
+        android:textSize="30sp" />
 
 </RelativeLayout>

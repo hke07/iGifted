@@ -121,6 +121,7 @@
             android:layout_height="64dp"
             android:onClick="signUp"
             android:text="Register"
+            android:backgroundTint="@color/purple_200"
             android:layout_marginTop="12dp"
             android:paddingVertical="12dp"
             android:textSize="20sp"
