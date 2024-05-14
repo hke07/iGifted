@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".UploadActivity">
+    tools:context=".UpdateActivity">
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,7 +24,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Add Product"
+                android:text="Edit Product"
                 android:textStyle="italic"
                 android:textSize="30sp"
                 android:textAlignment="center"
@@ -32,45 +33,45 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:src="@drawable/uploading"
-                android:id="@+id/uploadImage"
+                android:id="@+id/updateImage"
                 android:layout_marginTop="10dp"
                 android:scaleType="fitXY"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:id="@+id/uploadTopic"
+                android:id="@+id/updateTitle"
                 android:layout_marginTop="20dp"
                 android:padding="16dp"
-                android:hint="Enter topic name"
+                android:hint="Enter new topic name"
                 android:gravity="start|center_vertical"
                 android:textColor="@color/teal_200"
                 android:background="@drawable/rounded_corner"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:id="@+id/uploadDesc"
+                android:id="@+id/updateDesc"
                 android:layout_marginTop="20dp"
                 android:padding="16dp"
-                android:hint="Enter description"
+                android:hint="Enter new description"
                 android:gravity="start|center_vertical"
                 android:textColor="@color/teal_200"
                 android:background="@drawable/rounded_corner"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:id="@+id/uploadPrice"
+                android:id="@+id/updatePrice"
                 android:layout_marginTop="20dp"
                 android:padding="16dp"
-                android:hint="Enter price"
+                android:hint="Enter new price"
                 android:gravity="start|center_vertical"
                 android:textColor="@color/teal_200"
                 android:background="@drawable/rounded_corner"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="Upload"
+                android:text="Save Changes"
                 android:backgroundTint="@color/purple_200"
-                android:id="@+id/saveButton"
+                android:id="@+id/updateButton"
                 android:textSize="18sp"
                 android:layout_marginTop="20dp"
                 app:cornerRadius = "20dp"/>

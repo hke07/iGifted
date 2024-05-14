@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -23,9 +24,8 @@ import com.google.firebase.storage.StorageReference;
 public class DetailActivity extends AppCompatActivity {
 
     TextView detailDesc, detailTitle, detailPrice;
-    RelativeLayout delete_edit;
+    Button deleteBtn, editBtn;
     ImageView detailImage;
-    FloatingActionButton deleteButton, editButton;
     String key = "";
     String imageUrl = "";
 
@@ -38,6 +38,8 @@ public class DetailActivity extends AppCompatActivity {
         detailImage = findViewById(R.id.detailImage);
         detailTitle = findViewById(R.id.detailTitle);
         detailPrice = findViewById(R.id.detailPrice);
+        deleteBtn = findViewById(R.id.deleteButton);
+        editBtn = findViewById(R.id.editButton);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -48,5 +50,35 @@ public class DetailActivity extends AppCompatActivity {
             imageUrl = bundle.getString("Image");
             Glide.with(this).load(bundle.getString("Image")).into(detailImage);
         }
+
+        deleteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("My Database");
+                FirebaseStorage storage = FirebaseStorage.getInstance();
+                StorageReference storageReference = storage.getReferenceFromUrl(imageUrl);
+                storageReference.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        reference.child(key).removeValue();
+                        Toast.makeText(DetailActivity.this, "Deleted", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        finish();
+                    }
+                });
+            }
+        });
+        editBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DetailActivity.this, UpdateActivity.class)
+                        .putExtra("Title", detailTitle.getText().toString())
+                        .putExtra("Description", detailDesc.getText().toString())
+                        .putExtra("Price", detailPrice.getText().toString())
+                        .putExtra("Image", imageUrl)
+                        .putExtra("Key", key);
+                startActivity(intent);
+            }
+        });
     }
 }

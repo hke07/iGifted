@@ -13,6 +13,7 @@
     <color name="launch_text">#17A4E6</color>
     <color name="red">#c70000</color>
     <color name="green">#00ff00</color>
-    <color name="bluish">#1291F6</color>
+    <color name="gray">#9AAEBF</color>
+    <color name="biege">#DDC57A</color>
 
 </resources>

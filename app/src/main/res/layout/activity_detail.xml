@@ -32,29 +32,50 @@
         android:id="@+id/detailPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:padding="20dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
         android:text="Price"
-        android:layout_marginLeft="100sp"
         android:layout_gravity="center"
 
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="@color/teal_200"/>
-
-
 
     <TextView
         android:id="@+id/detailDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:padding="20dp"
-        android:layout_marginLeft="45sp"
+        android:layout_marginTop="4dp"
         android:text="Description"
+        android:gravity="center"
         android:layout_gravity="center"
 
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:textColor="@color/purple_500"/>
+
+    <Button
+        android:id="@+id/editButton"
+        android:layout_width="170dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/gray"
+        android:gravity="center"
+
+        android:text="Edit"
+        android:textColor="@color/biege"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="170dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/gray"
+        android:gravity="center"
+
+        android:text="Delete"
+        android:textColor="@color/red"
+        android:textSize="30sp" />
 
 </LinearLayout>
