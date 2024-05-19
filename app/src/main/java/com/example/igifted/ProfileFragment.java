@@ -15,8 +15,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -56,23 +58,22 @@ public class ProfileFragment extends Fragment {
         emailTextView = view.findViewById(R.id.email);
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser != null) {
-
             FirebaseFirestore db = FirebaseFirestore.getInstance();
             DocumentReference userRef = db.collection("users").document(currentUser.getUid());
-            userRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            userRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
-                public void onSuccess(DocumentSnapshot documentSnapshot) {
-                    if (documentSnapshot.exists()) {
-                        String name = documentSnapshot.getString("name");
-                        String email = documentSnapshot.getString("email");
-                        nameTextView.setText(name);
-                        emailTextView.setText(email);
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()) {
+                        DocumentSnapshot documentSnapshot = task.getResult();
+                        if (documentSnapshot.exists()) {
+                            String name = documentSnapshot.getString("name");
+                            String email = documentSnapshot.getString("email");
+                            nameTextView.setText(name);
+                            emailTextView.setText(email);
+                        }
+                    } else {
+                        Log.e(TAG, "Error fetching user data from Firestore", task.getException());
                     }
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Log.e(TAG, "Error fetching user data from Firestore", e);
                 }
             });
         }

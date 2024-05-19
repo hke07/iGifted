@@ -13,33 +13,66 @@
         android:layout_height="wrap_content"
         android:id="@+id/detailTitle"
         android:text="Title"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:textSize="44sp"
         android:layout_gravity="center"
         android:layout_marginBottom="12dp"
         android:textStyle="bold"
-        android:textColor="@color/teal_700"/>
+        android:textColor="@color/black"/>
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="300dp"
+        android:layout_height="220dp"
         android:id="@+id/detailImage"
         android:padding="8dp"
         android:layout_gravity="center"
         android:src="@drawable/uploading"
         android:scaleType="fitXY"/>
 
-    <TextView
-        android:id="@+id/detailPrice"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
         android:gravity="center"
-        android:text="Price"
-        android:layout_gravity="center"
+        android:layout_gravity="center">
 
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:textColor="@color/teal_200"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="$"
+
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="@color/teal_200"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginLeft="4dp">
+
+            <TextView
+                android:id="@+id/detailPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Price"
+
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="@color/teal_200"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/detailDesc"
@@ -51,31 +84,97 @@
         android:layout_gravity="center"
 
         android:textSize="25sp"
-        android:textColor="@color/purple_500"/>
+        android:textColor="@color/black"/>
 
-    <Button
-        android:id="@+id/editButton"
-        android:layout_width="170dp"
-        android:layout_height="70dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:backgroundTint="@color/gray"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:gravity="center"
-
-        android:text="Edit"
-        android:textColor="@color/biege"
-        android:textSize="30sp" />
-
-    <Button
-        android:id="@+id/deleteButton"
-        android:layout_width="170dp"
-        android:layout_height="70dp"
         android:layout_gravity="center"
-        android:backgroundTint="@color/gray"
-        android:gravity="center"
+        android:orientation="horizontal">
 
-        android:text="Delete"
-        android:textColor="@color/red"
-        android:textSize="30sp" />
+        <TextView
+            android:id="@+id/quantityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantity   "
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="28sp" />
+
+        <ImageButton
+            android:id="@+id/decreaseQuantityButton"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:contentDescription="decrease quantity"
+            android:src="@drawable/baseline_remove_24"
+            android:backgroundTint="@color/purple_200"
+            android:background="@drawable/rounded_corner" />
+
+        <TextView
+            android:id="@+id/quantityValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 1 "
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <ImageButton
+            android:id="@+id/increaseQuantityButton"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:contentDescription="increase quantity"
+            android:src="@drawable/baseline_add_24"
+            android:backgroundTint="@color/purple_200"
+            android:background="@drawable/rounded_corner" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="60dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp">
+
+            <Button
+                android:id="@+id/editButton"
+                android:layout_width="160dp"
+                android:layout_height="70dp"
+                android:backgroundTint="@color/biege"
+
+                android:text="Edit"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp">
+
+            <Button
+                android:id="@+id/deleteButton"
+                android:layout_width="160dp"
+                android:layout_height="70dp"
+                android:backgroundTint="@color/red2"
+
+                android:text="Delete"
+                android:textColor="@color/black"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
