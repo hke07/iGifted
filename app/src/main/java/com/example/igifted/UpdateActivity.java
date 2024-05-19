@@ -138,7 +138,7 @@ public class UpdateActivity extends AppCompatActivity {
         desc = updateDesc.getText().toString().trim();
         lang = updatePrice.getText().toString();
 
-        DataClass dataClass = new DataClass(title, desc, lang, imageUrl);
+        DataClass dataClass = new DataClass(title, desc, lang, imageUrl, 1);
 
         databaseReference.setValue(dataClass).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override

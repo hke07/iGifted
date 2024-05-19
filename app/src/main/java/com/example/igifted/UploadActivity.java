@@ -104,7 +104,7 @@ public class UploadActivity extends AppCompatActivity {
         String title = uploadTopic.getText().toString();
         String desc = uploadDesc.getText().toString();
         String price = uploadPrice.getText().toString();
-        DataClass dataClass = new DataClass(title, desc, price, imageURL);
+        DataClass dataClass = new DataClass(title, desc, price, imageURL, 1);
         String currentDate = String.valueOf(System.currentTimeMillis());
         FirebaseDatabase.getInstance().getReference("My Database").child(currentDate)
                 .setValue(dataClass).addOnCompleteListener(new OnCompleteListener<Void>() {

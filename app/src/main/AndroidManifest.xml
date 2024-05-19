@@ -15,6 +15,9 @@
         android:theme="@style/Theme.IGifted"
         tools:targetApi="31">
         <activity
+            android:name=".OrdersActivity"
+            android:exported="false" />
+        <activity
             android:name=".UpdateActivity"
             android:exported="false" />
         <activity

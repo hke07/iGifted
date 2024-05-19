@@ -31,13 +31,6 @@ public class DataClass {
     public String getDataImage() {
         return dataImage;
     }
-    public DataClass(String dataTitle, String dataDesc, String dataPrice, String dataImage) {
-        this.dataTitle = dataTitle;
-        this.dataDesc = dataDesc;
-        this.dataPrice = dataPrice;
-        this.dataImage = dataImage;
-        this.quantity = 1;
-    }
     public DataClass(String dataTitle, String dataDesc, String dataPrice, String dataImage, int quantity) {
         this.dataTitle = dataTitle;
         this.dataDesc = dataDesc;

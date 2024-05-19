@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -41,6 +42,11 @@ public class ProfileFragment extends Fragment {
         startActivity(intent);
     }
 
+    public void toOrders(View view) {
+        Intent intent = new Intent(getContext(), OrdersActivity.class);
+        startActivity(intent);
+    }
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -51,6 +57,14 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 toSettings(v);
+            }
+        });
+
+        Button myOrders = view.findViewById(R.id.myOrders);
+        myOrders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toOrders(v);
             }
         });
 
