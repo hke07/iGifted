@@ -7,10 +7,10 @@
     tools:context=".SettingsActivity">
 
     <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginLeft="@dimen/_33sdp"
+        android:layout_marginTop="@dimen/_33sdp"
         android:clickable="true"
         android:onClick="back"
         android:src="@drawable/baseline_arrow_back_24" />
@@ -20,53 +20,53 @@
         android:layout_height="wrap_content"
         android:text="Settings"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="@dimen/_38sdp"
         android:textStyle="bold"
-        android:textSize="32sp"
+        android:textSize="@dimen/_24sdp"
         android:textColor="@color/black"/>
 
     <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginLeft="300dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginLeft="@dimen/_225sdp"
+        android:layout_marginTop="@dimen/_33sdp"
         android:clickable="false"
         android:src="@drawable/baseline_settings_24" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/sign_up_icon"
-        android:layout_width="320dp"
-        android:layout_height="150dp"
+        android:layout_width="@dimen/_240sdp"
+        android:layout_height="@dimen/_113sdp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="@dimen/_120sdp"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/register"/>
 
     <Button
         android:id="@+id/logOut"
-        android:layout_width="250dp"
-        android:layout_height="65dp"
+        android:layout_width="@dimen/_190sdp"
+        android:layout_height="@dimen/_49sdp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="340dp"
+        android:layout_marginTop="@dimen/_255sdp"
         android:backgroundTint="@color/teal_200"
         android:onClick="log_out"
         android:text="Log out"
 
         android:textColor="@color/black"
-        android:textSize="22sp"/>
+        android:textSize="@dimen/_17sdp"/>
 
     <Button
         android:id="@+id/delete"
-        android:layout_width="250dp"
-        android:layout_height="65dp"
+        android:layout_width="@dimen/_190sdp"
+        android:layout_height="@dimen/_49sdp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="@dimen/_338sdp"
         android:backgroundTint="@color/teal_200"
         android:onClick="deleteAccount"
         android:text="Delete account"
         android:textColor="@color/black"
-        android:textSize="22sp" />
+        android:textSize="@dimen/_17sdp" />
 
 
 </RelativeLayout>

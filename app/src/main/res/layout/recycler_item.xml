@@ -4,12 +4,12 @@
     android:id="@+id/recCard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="12dp"
-    android:layout_marginEnd="12dp"
-    android:layout_marginHorizontal="10dp"
-    android:layout_marginVertical="10dp"
-    app:cardCornerRadius="20dp"
-    app:cardElevation="8dp">
+    android:layout_marginStart="@dimen/_9sdp"
+    android:layout_marginEnd="@dimen/_9sdp"
+    android:layout_marginHorizontal="@dimen/_8sdp"
+    android:layout_marginVertical="@dimen/_8sdp"
+    app:cardCornerRadius="@dimen/_15sdp"
+    app:cardElevation="@dimen/_6sdp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,9 +18,9 @@
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/recImage"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
             android:scaleType="centerCrop"
             android:src="@drawable/uploading"
             android:background="@drawable/rounded_corner" />
@@ -30,10 +30,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/recImage"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="@dimen/_11sdp"
             android:text="Title:"
             android:textColor="@color/purple_200"
-            android:textSize="20sp" />
+            android:textSize="@dimen/_15sdp" />
 
         <TextView
             android:id="@+id/white1"
@@ -41,11 +41,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/recTitle"
             android:text="-------------"
-            android:layout_marginLeft="24dp"
+            android:layout_marginLeft="@dimen/_18sdp"
             android:textStyle="bold"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="@dimen/_14sdp" />
 
         <TextView
             android:id="@+id/recPriceName"
@@ -57,19 +57,19 @@
             android:textStyle="bold"
             android:textAlignment="center"
             android:textColor="@color/teal_700"
-            android:textSize="18sp" />
+            android:textSize="@dimen/_14sdp" />
 
         <TextView
             android:id="@+id/recPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/white1"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="@dimen/_63sdp"
             android:text="Price"
             android:textStyle="bold"
             android:textAlignment="center"
             android:textColor="@color/teal_700"
-            android:textSize="18sp" />
+            android:textSize="@dimen/_14sdp" />
 
         <TextView
             android:id="@+id/white2"
@@ -77,11 +77,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/recPrice"
             android:text="-------------"
-            android:layout_marginLeft="24dp"
+            android:layout_marginLeft="@dimen/_18sdp"
             android:textStyle="bold"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="@dimen/_14sdp" />
 
     </RelativeLayout>
 

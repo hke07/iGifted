@@ -13,24 +13,24 @@
         android:layout_height="wrap_content"
         android:id="@+id/detailTitle"
         android:text="Title"
-        android:layout_marginTop="10dp"
-        android:textSize="44sp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:textSize="@dimen/_33sdp"
         android:layout_gravity="center"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="@dimen/_9sdp"
         android:textStyle="bold"
         android:textColor="@color/black"/>
     <ImageView
-        android:layout_width="300dp"
-        android:layout_height="220dp"
+        android:layout_width="@dimen/_225sdp"
+        android:layout_height="@dimen/_165sdp"
         android:id="@+id/detailImage"
-        android:padding="8dp"
+        android:padding="@dimen/_6sdp"
         android:layout_gravity="center"
         android:src="@drawable/uploading"
         android:scaleType="fitXY"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="@dimen/_30sdp"
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_gravity="center">
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:text="$"
 
-                android:textSize="25sp"
+                android:textSize="@dimen/_19sdp"
                 android:textStyle="bold"
                 android:textColor="@color/teal_200"/>
 
@@ -57,7 +57,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:layout_gravity="center"
-            android:layout_marginLeft="4dp">
+            android:layout_marginLeft="@dimen/_3sdp">
 
             <TextView
                 android:id="@+id/detailPrice"
@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:text="Price"
 
-                android:textSize="25sp"
+                android:textSize="@dimen/_19sdp"
                 android:textStyle="bold"
                 android:textColor="@color/teal_200"/>
 
@@ -78,18 +78,18 @@
         android:id="@+id/detailDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="@dimen/_3sdp"
         android:text="Description"
         android:gravity="center"
         android:layout_gravity="center"
 
-        android:textSize="25sp"
+        android:textSize="@dimen/_19sdp"
         android:textColor="@color/black"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="@dimen/_30sdp"
         android:gravity="center"
         android:layout_gravity="center"
         android:orientation="horizontal">
@@ -101,12 +101,12 @@
             android:text="Quantity   "
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:textSize="28sp" />
+            android:textSize="@dimen/_21sdp" />
 
         <ImageButton
             android:id="@+id/decreaseQuantityButton"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="@dimen/_26sdp"
+            android:layout_height="@dimen/_26sdp"
             android:contentDescription="decrease quantity"
             android:src="@drawable/baseline_remove_24"
             android:backgroundTint="@color/purple_200"
@@ -117,15 +117,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginLeft="@dimen/_6sdp"
+            android:layout_marginRight="@dimen/_6sdp"
             android:textColor="@color/black"
-            android:textSize="30sp" />
+            android:textSize="@dimen/_23sdp" />
 
         <ImageButton
             android:id="@+id/increaseQuantityButton"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="@dimen/_26sdp"
+            android:layout_height="@dimen/_26sdp"
             android:contentDescription="increase quantity"
             android:src="@drawable/baseline_add_24"
             android:backgroundTint="@color/purple_200"
@@ -135,59 +135,59 @@
 
     <Button
         android:id="@+id/addToCartButton"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="@dimen/_225sdp"
+        android:layout_height="@dimen/_53sdp"
+        android:layout_marginTop="@dimen/_12sdp"
         android:backgroundTint="@color/purple_200"
         android:text="Add To Cart"
         android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textSize="@dimen/_18sdp"
         android:gravity="center"
         android:layout_gravity="center"
-        app:cornerRadius="30dp"/>
+        app:cornerRadius="@dimen/_23sdp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="@dimen/_75sdp"
+        android:layout_marginTop="@dimen/_15sdp"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp">
+            android:layout_height="@dimen/_150sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginLeft="@dimen/_23sdp">
 
             <Button
                 android:id="@+id/editButton"
-                android:layout_width="160dp"
-                android:layout_height="70dp"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_53sdp"
                 android:backgroundTint="@color/biege"
 
                 android:text="Edit"
                 android:textColor="@color/black"
-                android:textSize="30sp"
-                app:cornerRadius="30dp"
+                android:textSize="@dimen/_23sdp"
+                app:cornerRadius="@dimen/_23sdp"
                 />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="30dp">
+            android:layout_height="@dimen/_150sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginLeft="@dimen/_23sdp">
 
             <Button
                 android:id="@+id/deleteButton"
-                android:layout_width="160dp"
-                android:layout_height="70dp"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_53sdp"
                 android:backgroundTint="@color/red2"
 
                 android:text="Delete"
                 android:textColor="@color/black"
-                android:textSize="30sp"
-                app:cornerRadius="30dp"/>
+                android:textSize="@dimen/_23sdp"
+                app:cornerRadius="@dimen/_23sdp"/>
 
         </LinearLayout>
 

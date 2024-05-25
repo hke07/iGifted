@@ -91,7 +91,7 @@
             android:id="@+id/new_arrival"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp">
+            android:layout_marginTop="60dp">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"

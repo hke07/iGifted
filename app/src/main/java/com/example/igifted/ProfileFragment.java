@@ -27,7 +27,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class ProfileFragment extends Fragment {
-    TextView nameTextView, emailTextView;
+    TextView emailTextView;
     private static final int REQUEST_CODE_STORAGE_PERMISSION = 100;
 
     @Override
@@ -44,6 +44,11 @@ public class ProfileFragment extends Fragment {
 
     public void toOrders(View view) {
         Intent intent = new Intent(getContext(), OrdersActivity.class);
+        startActivity(intent);
+    }
+
+    public void toOffers(View view) {
+        Intent intent = new Intent(getContext(), OffersActivity.class);
         startActivity(intent);
     }
 
@@ -68,29 +73,14 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        nameTextView = view.findViewById(R.id.name);
-        emailTextView = view.findViewById(R.id.email);
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-        if (currentUser != null) {
-            FirebaseFirestore db = FirebaseFirestore.getInstance();
-            DocumentReference userRef = db.collection("users").document(currentUser.getUid());
-            userRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                    if (task.isSuccessful()) {
-                        DocumentSnapshot documentSnapshot = task.getResult();
-                        if (documentSnapshot.exists()) {
-                            String name = documentSnapshot.getString("name");
-                            String email = documentSnapshot.getString("email");
-                            nameTextView.setText(name);
-                            emailTextView.setText(email);
-                        }
-                    } else {
-                        Log.e(TAG, "Error fetching user data from Firestore", task.getException());
-                    }
-                }
-            });
-        }
 
+        emailTextView = view.findViewById(R.id.email);
+        if (currentUser != null) {
+            String email = currentUser.getEmail();
+            if (email != null) {
+                emailTextView.setText(email);
+            }
+        }
     }
 }

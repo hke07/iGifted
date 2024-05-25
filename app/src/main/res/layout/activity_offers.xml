@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    tools:context=".OrdersActivity">
+    tools:context=".OffersActivity">
 
     <!-- TODO: Update blank fragment layout -->
     <ImageView
@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_23sdp"
-        android:text="Order History"
+        android:text="All Offers"
         android:textStyle="bold"
         android:textSize="@dimen/_26sdp"
         android:layout_marginStart="@dimen/_75sdp"
